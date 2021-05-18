@@ -1,5 +1,5 @@
 # YOLOv3-tiny Android APP
-- 성능 개선 전 yolov3-tiny
+- 성능 개선 전 yolov3-tiny (정확도가 많이 떨어진다)
 <img src="https://github.com/CAUCV/YOLOv3-Android/blob/main/result_image/yolov3-tiny.jpg?raw=true" width="600px">
 
 ## 개발 환경
