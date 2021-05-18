@@ -4,9 +4,11 @@
 - Windows 10
 - Android Studio
 - opencv-3.4.5-android-sdk
-- yolov3 & yolov3-tiny weight download:
-> https://pjreddie.com/media/files/yolov3-tiny.weights
-> https://pjreddie.com/media/files/yolov3.weights
+
+### yolov3 & yolov3-tiny weight download:
+- debug의 assets 폴더 안에 넣어야 한다.
+- https://pjreddie.com/media/files/yolov3-tiny.weights
+- https://pjreddie.com/media/files/yolov3.weights
 
 ## 참고 문서
 - https://github.com/ivangrov/Android-Deep-Learning-with-OpenCV
