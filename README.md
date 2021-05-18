@@ -1,4 +1,6 @@
 # YOLOv3-tiny Android APP
+- 성능 개선 전 yolov3-tiny
+<img src="https://github.com/CAUCV/YOLOv3-Android/blob/main/result_image/yolov3-tiny.jpg?raw=true" width="600px">
 
 ## 개발 환경
 - Windows 10
