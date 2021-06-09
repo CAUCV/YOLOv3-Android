@@ -19,4 +19,3 @@
 ## 참고 문서
 - https://github.com/ivangrov/Android-Deep-Learning-with-OpenCV
 - https://docs.opencv.org/3.4/d0/d6c/tutorial_dnn_android.html (getPath 참고)
-- https://m.blog.naver.com/bdg9412/221795234705
