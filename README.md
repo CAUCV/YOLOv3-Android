@@ -19,3 +19,6 @@
 ## 참고 문서
 - https://github.com/ivangrov/Android-Deep-Learning-with-OpenCV
 - https://docs.opencv.org/3.4/d0/d6c/tutorial_dnn_android.html (getPath 참고)
+
+## YOLOv3-tiny Custom 모델 학습 결과
+- [https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing]
