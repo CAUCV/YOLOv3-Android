@@ -11,13 +11,12 @@
 - Android Studio
 - opencv-3.4.5-android-sdk
 
-## Custiom Model weight & cfg download:
+## YOLOv3-tiny Custom Model (Mask Detection Model)
+- [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)  
 
-## YOLOv3-tiny Custom Model 생성
-- [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)
 **Custiom Model weight & cfg download:**
-> input path: debug/assets
-> [Mask detection 학습 결과](https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing)
+- input path: debug/assets
+- [Mask detection 학습 결과](https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing)
 
 ## 참고 문서
 - https://github.com/ivangrov/Android-Deep-Learning-with-OpenCV
