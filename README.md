@@ -12,7 +12,7 @@
 - opencv-3.4.5-android-sdk
 
 ## YOLOv3-tiny Custom Model (Mask Detection Model)
-- [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)  
+:link: [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)  
 
 **Custiom Model weight & cfg download:**  
 :floppy_disk: Input path: debug/assets  
