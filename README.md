@@ -11,17 +11,14 @@
 - Android Studio
 - opencv-3.4.5-android-sdk
 
-### yolov3 & yolov3-tiny weight download:
-- debug의 assets 폴더 안에 넣어야 한다.
-- [Mask detection 학습 결과](https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing)
+## Custiom Model weight & cfg download:
 
-## 성능 개선을 위해 봐야할 것
-- yolov3-tiny.cfg 에서 batch size, classification 등 수정
-- yolov3 는 layer가 3개, yolov3-tiny 는 layer가 2개 (cfg 파일의 [yolo])
+## YOLOv3-tiny Custom Model 생성
+- [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)
+**Custiom Model weight & cfg download:**
+> input path: debug/assets
+> [Mask detection 학습 결과](https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing)
 
 ## 참고 문서
 - https://github.com/ivangrov/Android-Deep-Learning-with-OpenCV
 - https://docs.opencv.org/3.4/d0/d6c/tutorial_dnn_android.html (getPath 참고)
-
-## YOLOv3-tiny Custom Model 생성
-- [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)
