@@ -15,8 +15,8 @@
 - [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)  
 
 **Custiom Model weight & cfg download:**
-- input path: debug/assets
-- [Mask detection 학습 결과](https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing)
+nput path: debug/assets
+:cloud: [Mask detection 학습 결과](https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing)
 
 ## 참고 문서
 - https://github.com/ivangrov/Android-Deep-Learning-with-OpenCV
