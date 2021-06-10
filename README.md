@@ -13,8 +13,7 @@
 
 ### yolov3 & yolov3-tiny weight download:
 - debug의 assets 폴더 안에 넣어야 한다.
-- https://pjreddie.com/media/files/yolov3-tiny.weights
-- https://pjreddie.com/media/files/yolov3.weights
+- [Mask detection 학습 결과](https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing)
 
 ## 성능 개선을 위해 봐야할 것
 - yolov3-tiny.cfg 에서 batch size, classification 등 수정
@@ -24,5 +23,5 @@
 - https://github.com/ivangrov/Android-Deep-Learning-with-OpenCV
 - https://docs.opencv.org/3.4/d0/d6c/tutorial_dnn_android.html (getPath 참고)
 
-## YOLOv3-tiny Custom 모델 학습 결과
-- [https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing]
+## YOLOv3-tiny Custom Model 생성
+- [github link](https://github.com/CAUCV/YOLOv3-Android)
