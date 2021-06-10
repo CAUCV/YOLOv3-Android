@@ -14,7 +14,7 @@
 ## YOLOv3-tiny Custom Model (Mask Detection Model)
 - [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)  
 
-**Custiom Model weight & cfg download:**
+**Custiom Model weight & cfg download:**  
 :floppy_disk: Input path: debug/assets  
 :cloud: [Mask detection 학습 결과](https://drive.google.com/drive/folders/1WIMAW8P3mh8zlINm_OFZR-xNFQpx-uM6?usp=sharing)
 
