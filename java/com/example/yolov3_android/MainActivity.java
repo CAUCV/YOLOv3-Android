@@ -7,6 +7,7 @@ import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -44,25 +45,27 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     boolean startYolo = false;
     boolean firstTimeYolo = false;
     Net tinyYolo;
+
     Net Yolo;
 
+    private String cfg = "yolov3-tiny_obj.cfg";
+    private String weight = "yolov3-tiny_obj_best.weights";
+
     public void YOLO(View Button){
+        Button text = (Button) findViewById(R.id.button3);
         if (startYolo == false){
             startYolo = true;
             if (firstTimeYolo == false){
                 firstTimeYolo = true;
-
-                String tinyYoloCfg = getPath("yolov3-tiny.cfg", this);
-                String tinyYoloWeights = getPath("yolov3-tiny.weights", this);
+                text.setText("DETECTING...");
+                String tinyYoloCfg = getPath(cfg, this);
+                String tinyYoloWeights = getPath(weight, this);
                 tinyYolo = Dnn.readNetFromDarknet(tinyYoloCfg, tinyYoloWeights);
-
-                //String YoloCfg = getPath("yolov3.cfg", this);
-                //String YoloWeights = getPath("yolov3.weights", this);
-                //Yolo = Dnn.readNetFromDarknet(YoloCfg, YoloWeights);
             }
         }
         else{
             startYolo = false;
+            text.setText("START DETECT");
         }
     }
 
@@ -100,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
         cameraBridgeViewBase.setCvCameraViewListener(this);
 
+        // 1: 전면 카메라, 2: 후면 카메라라
+       cameraBridgeViewBase.setCameraIndex(1);
+
         //System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         baseLoaderCallback = new BaseLoaderCallback(this) {
             @Override
@@ -131,16 +137,6 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
             outBlobNames.add(0, "yolo_16");
             outBlobNames.add(1, "yolo_23");
             tinyYolo.forward(result,outBlobNames);
-
-            /*
-            Yolo.setInput(imageBlob);
-            java.util.List<Mat> result = new java.util.ArrayList<Mat>(3);
-            List<String> outBlobNames = new java.util.ArrayList<>();
-            outBlobNames.add(0, "yolo_82");
-            outBlobNames.add(1, "yolo_94");
-            outBlobNames.add(2, "yolo_106");
-            Yolo.forward(result,outBlobNames);
-            */
 
             float confThreshold = 0.3f;
             List<Integer> clsIds = new ArrayList<>();
@@ -194,9 +190,9 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
                     int idGuy = clsIds.get(idx);
                     float conf = confs.get(idx);
 
-                    List<String> cocoNames = Arrays.asList("a person", "a bicycle", "a motorbike", "an airplane", "a bus", "a train", "a truck", "a boat", "a traffic light", "a fire hydrant", "a stop sign", "a parking meter", "a car", "a bench", "a bird", "a cat", "a dog", "a horse", "a sheep", "a cow", "an elephant", "a bear", "a zebra", "a giraffe", "a backpack", "an umbrella", "a handbag", "a tie", "a suitcase", "a frisbee", "skis", "a snowboard", "a sports ball", "a kite", "a baseball bat", "a baseball glove", "a skateboard", "a surfboard", "a tennis racket", "a bottle", "a wine glass", "a cup", "a fork", "a knife", "a spoon", "a bowl", "a banana", "an apple", "a sandwich", "an orange", "broccoli", "a carrot", "a hot dog", "a pizza", "a doughnut", "a cake", "a chair", "a sofa", "a potted plant", "a bed", "a dining table", "a toilet", "a TV monitor", "a laptop", "a computer mouse", "a remote control", "a keyboard", "a cell phone", "a microwave", "an oven", "a toaster", "a sink", "a refrigerator", "a book", "a clock", "a vase", "a pair of scissors", "a teddy bear", "a hair drier", "a toothbrush");
+                    List<String> labelNames = Arrays.asList("MASK", "NO MASK");
                     int intConf = (int) (conf * 100);
-                    Imgproc.putText(frame,cocoNames.get(idGuy) + " " + intConf + "%",box.tl(), Core.FONT_HERSHEY_SIMPLEX, 2, new Scalar(255,255,0),2);
+                    Imgproc.putText(frame,labelNames.get(idGuy) + " " + intConf + "%",box.tl(), Core.FONT_HERSHEY_SIMPLEX, 2, new Scalar(255,255,0),2);
                     Imgproc.rectangle(frame, box.tl(), box.br(), new Scalar(255, 0, 0), 2);
                 }
             }
@@ -207,13 +203,9 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     @Override
     public void onCameraViewStarted(int width, int height) {
         if (startYolo == true){
-            String tinyYoloCfg = getPath("yolov3-tiny.cfg", this);
-            String tinyYoloWeights = getPath("yolov3-tiny.weights", this);
+            String tinyYoloCfg = getPath(cfg, this);
+            String tinyYoloWeights = getPath(weight, this);
             tinyYolo = Dnn.readNetFromDarknet(tinyYoloCfg, tinyYoloWeights);
-
-            // String YoloCfg = getPath("yolov3.cfg", this);
-            // String YoloWeights = getPath("yolov3.weights", this);
-            // Yolo = Dnn.readNetFromDarknet(YoloCfg, YoloWeights);
         }
     }
 
@@ -224,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     protected void onResume() {
         super.onResume();
         if (!OpenCVLoader.initDebug()){
-            Toast.makeText(getApplicationContext(),"There's a problem, yo!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"There's a problem!", Toast.LENGTH_SHORT).show();
         }
         else{
             baseLoaderCallback.onManagerConnected(baseLoaderCallback.SUCCESS);
