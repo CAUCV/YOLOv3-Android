@@ -24,4 +24,4 @@
 - https://docs.opencv.org/3.4/d0/d6c/tutorial_dnn_android.html (getPath 참고)
 
 ## YOLOv3-tiny Custom Model 생성
-- [github link](https://github.com/CAUCV/YOLOv3-Android)
+- [github link](https://github.com/CAUCV/YOLOv3-tiny-custom)
